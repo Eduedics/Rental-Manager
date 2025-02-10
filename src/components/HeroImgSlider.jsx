@@ -1,7 +1,7 @@
 import "./HeroImgSliderStyles.css"
 import React from "react"
 import{BsArrowLeftCircleFill,BsArrowRightCircleFill} from 'react-icons/bs'
-export default function HeroImgSlider(url,limit,page){
+export default function HeroImgSlider({url,limit,page}){
     const[images,setImages] =React.useState([])
     const[currentSlide,setCurrentSlide] = React.useState(0)
     const[errorMsg,setErrorMsg]= React.useState(null)
@@ -9,12 +9,12 @@ export default function HeroImgSlider(url,limit,page){
 
     async function fetchImages(getUrl){
         try{
-            setLoading(false)
+            setLoading(true)
             const res = await fetch(`${getUrl}?page=${page}&limit=${limit}`)
             const data = await res.json()
             console.log(data)
             if(data){
-                setLoading(true)
+                setLoading(false)
                 setImages(data)
             }
         }
@@ -30,15 +30,16 @@ export default function HeroImgSlider(url,limit,page){
     console.log(loading)
 
     if(loading){
-        <div>please wait!loading.....</div>
+        return <div>please wait!loading.....</div>
     }
     if(errorMsg!==null){ 
-        <div>an error occured {errorMsg}</div>
+        return <div>an error occured {errorMsg}</div>
     }
 
     function handleNext(){
-        setCurrentSlide(currentSlide === 0 ?0:currentSlide+1)
+        setCurrentSlide(prevSlide => prevSlide === images.length - 1 ? 0 : prevSlide + 1);
     }
+    
     function handlePrevious(){
         setCurrentSlide(currentSlide===0?images.length-1:currentSlide-1)
     }
@@ -57,17 +58,16 @@ export default function HeroImgSlider(url,limit,page){
             }
             <BsArrowRightCircleFill  onClick={handleNext}  className="arrow arrow-right"/>
             <span className="circle-indicators">
-                {
-                    images&&images.lenght !==0?
-                        images.map((_,index)=>{
-                            <button className={currentSlide===index?"current-indicator":"current-indicator hide-current-ndicator"} 
-                            key={index} onClick={()=>{currentSlide(index)}}>
-
-                            </button>
-                        })
-                    :null
-                }
-            </span>
+    {images && images.length !== 0
+        ? images.map((_, index) => (
+            <button 
+                className={currentSlide === index ? "current-indicator" : "current-indicator hide-current-indicator"} 
+                key={index} 
+                onClick={() => setCurrentSlide(index)}
+            />
+        ))
+        : null}
+</span>
         </div>
     )
 }

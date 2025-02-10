@@ -8,7 +8,8 @@ export default function Layout(){
     return(
         <div>
             <Navbar />
-            <HeroImgSlider  url="https://picsum.    photos/v2/list" limit={'10'} page= {'1'} />
+            <HeroImgSlider url="https://picsum.photos/v2/list" limit={'10'} page={'1'} />
+
             <Outlet />
             <Footer />
         </div>
