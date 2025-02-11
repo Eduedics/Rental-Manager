@@ -39,7 +39,7 @@ export default function Footer() {
         </div>
   
         <div className="footer-bottom">
-          <p>&copy; 2025 Rental Manager. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Rental Manager. All rights reserved.</p>
         </div>
       </footer>
     );

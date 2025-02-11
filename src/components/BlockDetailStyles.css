@@ -1,0 +1,20 @@
+import { useParams, Link } from "react-router-dom";
+import estatesData from "../Data";
+
+export default function BlockDetail() {
+    const { estateId, blockId } = useParams();
+    const estate = estatesData.find(e => e.id === estateId);
+    const block = estate.blocks.find(b => b.id === blockId);
+
+    return (
+        <div>
+            <h2>Block {block.name}</h2>
+            <h3>Floors</h3>
+            {block.floors.map(floor => (
+                <Link key={floor.id} to={`/estate/${estateId}/block/${blockId}/floor/${floor.id}`}>
+                    <button>{floor.name}</button>
+                </Link>
+            ))}
+        </div>
+    );
+}
