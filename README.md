@@ -36,9 +36,9 @@ npm run dev
 
 📖 API Endpoints (If applicable)
 Endpoint	Method	Description
-/api/properties	GET	Get all properties
-/api/tenants	POST	Add a new tenant
-/api/payments	PATCH	Update payment status
+/<>/properties	GET	Get all properties
+/<>/tenants	POST	Add a new tenant
+/<>/payments	PATCH	Update payment status
 🤝 Contribution
 
     Fork the project
