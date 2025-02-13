@@ -8,13 +8,6 @@ export default function FloorDetail() {
     const block = estate.blocks.find(b => b.id === blockId);
     const floor = block.floors.find(f => f.id === floorId);
     console.log(floor)
-    // const room = floor.rooms.find(r => r.id === roomId);
-    // console.log(floor)
-
-    // const rooms = [
-    //     { id: 1, name: "Room 1", description: "1 Bedroom, AC, Hot Shower" },
-    //     { id: 2, name: "Room 2", description: "2 Bedroom, Balcony" },
-    // ];
 
     return (
         <div>
@@ -24,7 +17,7 @@ export default function FloorDetail() {
             {
                 floor.rooms.map(room=>(
                     <div key={room.id}>
-                        <Link  to={`/estate/${estateId}/block/${blockId}/floor/${floorId}/room/${roomId}`}>
+                        <Link  to={`/estate/${estateId}/block/${blockId}/floor/${floorId}/room/${room.id}`}>
                             <button style={{width:'60px'}}>Room {room.number}</button>
                         </Link>
                         <p>{room.description}</p>
