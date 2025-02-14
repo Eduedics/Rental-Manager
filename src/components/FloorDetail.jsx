@@ -10,29 +10,38 @@ export default function FloorDetail() {
     console.log(floor)
 
     return (
-        <div>
-            <h2>Estate {estateId} - Block {blockId} - Floor {floorId}</h2>
-            <h3>Rooms:</h3>
-            <ul>
-            {
-                floor.rooms.map(room=>(
-                    <div key={room.id}>
-                        <Link  to={`/estate/${estateId}/block/${blockId}/floor/${floorId}/room/${room.id}`}>
-                            <button style={{width:'60px'}}>Room {room.number}</button>
-                        </Link>
-                        <p>{room.description}</p>
-                        <h3>Amenities:</h3>
-                        <ul>
-                            {room.amenities.map(a => <li key={a}>{a}</li>)}
+        <div className="floor-detail">
+            <div>
+                <h2>Estate {estateId} - Block {blockId} - Floor {floorId}</h2>
+                <h3>Rooms:<span style={{color:'red'}}>{floor.rooms.length}</span></h3>
+            </div>
+                {/* <div className="rooms"> */}
+                    {/* <h3>Rooms:</h3> */}
+                    
+                    <ul className="rooms">
+                    {
+                        floor.rooms.map(room=>(
+                            <div key={room.id} className="room-components">
+                               
+                                <Link  to={`/estate/${estateId}/block/${blockId}/floor/${floorId}/room/${room.id}`}>
+                                    <button style={{width:'60px'}} className="btn">Room {room.number}</button>
+                                </Link>
+                                <p>{room.description}</p>
+                                <h3>Amenities:</h3>
+                                <ul>
+                                    {room.amenities.map(a => <li key={a}>{a}</li>)}
+                                    
+                                </ul>
+                                <h3>Booking Terms:</h3>
+                                <p>{room.booking}</p>
+                                </div>
                             
-                        </ul>
-                        <h3>Booking Terms:</h3>
-                        <p>{room.booking}</p>
-                    </div>
-                ))
-            }
-            </ul>
-        </div>
+                        ))
+                    }
+                    </ul>
+                
+            </div>
+        // </div>
     );
 }
 

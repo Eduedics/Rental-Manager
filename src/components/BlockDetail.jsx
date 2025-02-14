@@ -11,14 +11,22 @@ export default function BlockDetail() {
     
 
     return (
-        <div>
+        <div className='block'>
             <h2>Block {block.name}</h2>
-            <h3>Floors</h3>
-            {block.floors.map(floor => (
-                <Link key={floor.id} to={`/estate/${estateId}/block/${blockId}/floor/${floor.id}`}>
-                    <button>{floor.name}</button>
-                </Link>
-            ))}
+            <div className='block-floors'>
+                <h3>Floors</h3>
+                <div className='floors'>
+                    {block.floors.map(floor => (
+                        <div className='floorList' key={floor.id}>
+                            <Link className='btn'  to={`/estate/${estateId}/block/${blockId}/floor/${floor.id}`}>
+                                <button>{floor.name}</button>
+                            </Link>
+                            
+                        </div>
+                        
+                    ))}
+                </div>
+            </div>
         </div>
     );
 }
