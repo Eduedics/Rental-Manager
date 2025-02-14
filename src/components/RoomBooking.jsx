@@ -7,7 +7,7 @@ export default function RoomDescription(){
     return(
         <div className="booking">
             <p>{context.booking}</p>
-            <Link>Book now</Link>
+            <button className="btn book"><Link>Book now</Link></button>
         </div>
     )
 }

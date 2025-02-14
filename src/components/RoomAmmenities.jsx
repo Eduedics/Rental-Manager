@@ -5,7 +5,7 @@ export default function RoomPhotos(){
     console.log(context.amenities)
 
     return(
-        <div className="description">
+        <div className="amenities">
             {
                 context.amenities.map((amenity,index)=>(
                     <p key={index}>{amenity}</p>

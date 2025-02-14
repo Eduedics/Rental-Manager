@@ -196,3 +196,215 @@ span{
         padding: 5px;
     }
 }
+
+/* blockDetails */
+.block{
+   display: grid;
+   grid-template-columns: repeat(2,2fr);
+   padding: 10px;
+   justify-content: center;
+    align-content: center;
+}
+.block h2{
+    align-content: center;
+}
+.block-floors{
+    display: flex;
+    flex-direction: column;
+}
+.block-floors h3{
+    color: #032286;
+    text-align: center;
+}
+.floors{
+    display: grid;
+    grid-template-columns: repeat(1fr);
+    
+}
+.floolist{
+    justify-content: center;
+}
+.btn{
+    margin: 10px;
+    text-align: center;
+}
+.btn button{
+    background: #1b9204;
+    color: #fff;
+    border: none;
+    border-radius: 2px 5px;
+    padding: 10px,1rem;
+    transition: background 0.4s ease-in;
+    cursor: pointer;
+    text-transform: uppercase;
+    width: 20%;
+    height: 100%;
+}
+.btn button:hover{
+    background:#fff ;
+    color: #1b9204;
+    border: 1px solid red;
+    border-radius: 5px 2px;
+
+}
+@media screen and (max-width:720px) {
+    .block{
+        display: grid;
+        grid-template-columns: repeat(1,2fr);
+        
+     }
+}
+
+/* FloorDetails */
+
+.floor-detail{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2,3fr);
+    padding: 1REM;
+}
+.floor-detail h2{
+    color: #032286;  
+}
+.floor-detail h3{
+    color: #1041a1;
+    text-align: center;
+}
+.rooms{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+    margin: 10PX;
+}
+.btn{
+    width: 60px;
+    background: #1b9204;
+    color: #fff;
+    border: none;
+    border-radius: 2px 5px;
+    padding: 10px,1rem;
+    transition: background 0.4s ease-in;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+.btn:hover{
+    background:#fff ;
+    color: #1b9204;
+    border: 1px solid red;
+    border-radius: 5px 2px;
+}
+.room-components{
+    background: #e7e6e6;
+    padding: 10px;
+    box-shadow: 0 5px 3px rgba(144, 145, 151, 0.7);
+}
+.room-components p{
+    color: #41454e;
+}
+.room-components h3{
+    display: inline;
+    margin: 0;
+    padding: 0;
+    background: #e7dcdc;
+    text-align: center;
+}
+.room-components ul{
+    padding: 10px;
+    background: #dababa;
+}
+.room-components ul li{
+    list-style: disc;
+    margin:1rem ;
+}
+@media screen and (max-width:720px) {
+    .floor-detail{
+        gap: 5px;
+        grid-template-columns: repeat(1,2fr);
+        padding: 0.5REM;
+    }
+    .rooms{
+        grid-template-columns: repeat(1,1fr);
+   
+    }
+    .floor-detail h2{
+        text-align: CENTER;  
+    }
+   
+
+}
+/* room Detail */
+.room{
+    padding: 0.7rem;
+}
+.room h2{ 
+    color: #032286;  
+}
+.nav{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.nav li {
+    list-style: none;
+}
+.nav a{
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #b80606;
+}
+.nav-active{
+    text-decoration: underline;
+    color: #d3c616;
+}
+.nav a:hover{
+    text-decoration: underline;
+    color: #13d323;
+}
+.description .amenities{
+    color: #41454e;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    overflow: scroll;
+}
+.booking p{
+    color: #41454e;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    overflow: scroll;
+}
+.book{
+    width: auto;
+    padding: 10px 7px;
+    background: red;
+    animation: sizeChange 1s ease-in-out infinite normal;
+}
+button a{
+    text-decoration: none;
+    color:#000;
+}
+/* book now animation */
+@keyframes sizeChange {
+    0%{padding: 10px 7px;background-color: red;color: #000;}
+    50%{padding: 8px 8px;background: #0caf0c;color: #0a0808;}
+    100%{padding: 10px 6px;background: #ee0e0e;color: #eee6e6;}
+}
+.photos{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4,1fr);
+}
+.room-img{
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+@media screen and (max-width:720px) {
+    .nav{
+        flex-direction: column;
+        padding: 1rem;
+    }
+    .photos{
+        grid-template-columns: repeat(1,1fr);
+    }
+}

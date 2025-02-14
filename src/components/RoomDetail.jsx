@@ -17,7 +17,6 @@ export default function RoomDetails(){
     
 
     return(
-        <div className="room">
             <>
                 <div className="room" >
                     <h2>Room {room.number}</h2>
@@ -26,6 +25,6 @@ export default function RoomDetails(){
                 </div>
                
             </>        
-        </div>
+      
     )
 }
