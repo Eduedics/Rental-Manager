@@ -1,9 +1,13 @@
-import { Link, Outlet, useParams } from "react-router-dom";
+import { Link, Outlet, useParams,useLocation } from "react-router-dom";
 import estatesData from "../Data";
 import { BsArrowLeft } from "react-icons/bs";
 
 export default function RoomDetails(){
     const {roomId,estateId,floorId,blockId} = useParams()
+    const currentLocation =useLocation()
+    const showArrow = currentLocation.pathname.includes(`/room/${roomId}/`)
+    console.log(showArrow)
+    
 
     const estate = estatesData.find(e =>e.id === estateId)
     // console.log(estate)
@@ -20,7 +24,9 @@ export default function RoomDetails(){
             <>
                 <div className="room" >
                     <h2>Room {room.number}</h2>
+                    {showArrow&&(
                     <Link to='.'><BsArrowLeft size={40}/></Link>
+                    )}
                     <Outlet context={room}/>
                 </div>
                
