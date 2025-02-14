@@ -13,16 +13,24 @@ export default function EstateDetail() {
     
 
     return (
-        <div>
+        <div className='estate-details'>
             <h2>{estate.name}</h2>
-            <p>{estate.description}</p>
+            <p><span>Description</span>: {estate.description}</p>
             <h3>Blocks</h3>
+            <div className='block-item'>
             {estate.blocks.map(block => (
-                <Link key={block.id} to={`/estate/${estateId}/block/${block.id}`}>
-                    <button style={{width:'60px'}}>{block.name}</button>
-                </Link>
+                <div className='block-container' key={block.id}>
+                    
+                    <Link  to={`/estate/${estateId}/block/${block.id}`}>
+                        <button className='block-btn' style={{width:'60px'}}>{block.name}</button>
+                    </Link>
+                    <h2><span>description</span>:ie first floor</h2>
+                    
+                    </div>
+                
             
             ))}
+            </div>
         </div>
     );
 }
