@@ -7,25 +7,29 @@
     /* max-width: 100%; */
     margin-right: 20px;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .search-filter form{
-    width: 80%;
+    width: 100%;
     display: flex;
     position:absolute;
-    /* top: 10%;
-    left: 0; */
+    top: 0%;
+    left: 0%;
+    
 }
 .search-filter form input{
     border: none;
     border-radius: 5px;
-    background: #0c0c0c;
-    color: #fff;
+    background: #eee9e9;
+    color: #0c0b0b;
     text-align: center;
-    font-size: 1.4rem;
-    padding: 0.3rem;
+    font-size: 1.2rem;
+    padding: 0.1rem;
     font-weight: 400;
 }
-.search-filter form button{
+/* .search-filter form button{
     background: #071a83;
     color: beige;
     padding: auto;
@@ -41,7 +45,7 @@
     background:beige ;
     color: #071a83;
     padding: auto;
-}
+} */
 .estates{
     flex: 1;
 }
@@ -194,6 +198,7 @@ span{
     }
     .search-filter{
         padding: 5px;
+        justify-content: center;
     }
 }
 

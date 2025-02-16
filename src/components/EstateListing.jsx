@@ -16,8 +16,8 @@ export default function EstateListing(){
             <section className='Listing-container'>
                 <aside className='search-filter'>
                     <form>
-                        <input type='text' placeholder='Enter your search here'/>
-                        <button>search</button>
+                        <input type='text' placeholder='Enter Name of Estate..'/>
+                        {/* <button>search</button> */}
                     </form>    
                 </aside>
                 <aside className='estates'>
