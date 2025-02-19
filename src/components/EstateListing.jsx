@@ -11,7 +11,8 @@ export default function EstateListing(){
     // add state to keep data fetched from api
     // inside api fetch update state of filtered estate to data from api
     const[searchValue,setSearchValue] = React.useState('')
-    const[EstateFilterd,setEstateFiltered] =React.useState([])
+    // added estatedata to aavoid rendering empty state on first render but later on using api data we shall initialize state as empty array ,and set setEstateFiltered(data from api) to remove the error
+    const[EstateFilterd,setEstateFiltered] =React.useState(estateData)
     
     const FilterByName=(e)=>{
         const searchedEstate =e.target.value
@@ -21,7 +22,7 @@ export default function EstateListing(){
         console.log(filteredEstate)
         setEstateFiltered(filteredEstate)
 
-        // const displayEstate = filteredEstate?EstateFilterd:estateData
+        // const displayEstate = EstateFilterd?EstateFilterd:estateData
         
     }
     return(
@@ -35,7 +36,7 @@ export default function EstateListing(){
                 <aside className='estates'>
                     <h2>Available Estates</h2>
                     <div className='estate-listing'>
-                        {EstateFilterd.map(
+                        {EstateFilterd.length===0?<p>No estate found...</p>:EstateFilterd.map(
                             estate=>(
                                 <div className='estate-item' key={estate.id}>
                                     <h1>{estate.name}</h1>
