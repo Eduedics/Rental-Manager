@@ -12,6 +12,7 @@ import RoomDescription from './components/RoomDescription.jsx'
 import RoomBooking from './components/RoomBooking.jsx'
 import RoomAmmenities from './components/RoomAmmenities.jsx'
 import RoomPhotos from './components/RoomPhotos.jsx'
+import PageNotFound from './components/PageNotFound.jsx'
 
 import './App.css'
 
@@ -57,7 +58,7 @@ function App() {
               element={<RoomPhotos/>}
             />
           </Route>
-            
+          <Route path='*' element={<PageNotFound/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

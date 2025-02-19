@@ -413,3 +413,27 @@ button a{
         grid-template-columns: repeat(1,1fr);
     }
 }
+/* page not found component */
+.container{
+    flex-direction: column;
+}
+.container p{
+    font-size: 1.5rem;
+}
+.container a{
+    background: #000;
+    color: #fff;
+    width: 50%;
+    text-align: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: background,color 2s ease;
+}
+.container a:hover{
+    background: #3b0505;
+    color: #2fc900;
+}
