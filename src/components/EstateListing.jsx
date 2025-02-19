@@ -3,27 +3,39 @@ import './EstateListingStyles.css'
 // import estate data
 import estateData from "../Data.js"
 
+import React from 'react'
 
 import{Link} from "react-router-dom"
 
 export default function EstateListing(){
-
-
+    // add state to keep data fetched from api
+    // inside api fetch update state of filtered estate to data from api
+    const[searchValue,setSearchValue] = React.useState('')
+    const[EstateFilterd,setEstateFiltered] =React.useState([])
     
+    const FilterByName=(e)=>{
+        const searchedEstate =e.target.value
+        setSearchValue(searchedEstate)
+        // console.log(searchValue)
+        const filteredEstate = estateData.filter(estate=>estate.name.toLowerCase().includes(searchedEstate.toLowerCase()))
+        console.log(filteredEstate)
+        setEstateFiltered(filteredEstate)
 
+        // const displayEstate = filteredEstate?EstateFilterd:estateData
+        
+    }
     return(
         <div>
             <section className='Listing-container'>
                 <aside className='search-filter'>
                     <form>
-                        <input type='text' placeholder='Enter Name of Estate..'/>
-                        {/* <button>search</button> */}
+                        <input type='text' placeholder='Enter Name of Estate..' value={searchValue} onChange={FilterByName}/>
                     </form>    
                 </aside>
                 <aside className='estates'>
                     <h2>Available Estates</h2>
                     <div className='estate-listing'>
-                        {estateData.map(
+                        {EstateFilterd.map(
                             estate=>(
                                 <div className='estate-item' key={estate.id}>
                                     <h1>{estate.name}</h1>
