@@ -416,6 +416,7 @@ button a{
 /* page not found component */
 .container{
     flex-direction: column;
+
 }
 .container p{
     font-size: 1.5rem;
@@ -451,6 +452,7 @@ button a{
     flex-direction: column;
     width: 100%;
     max-width: 500px;    
+    padding: 1REM;
 }
 
 .login-form > input {
